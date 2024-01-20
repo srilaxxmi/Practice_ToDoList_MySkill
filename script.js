@@ -1,14 +1,11 @@
-var addButton = document.getElementById("add-button");
+var addButton = document.getElementById("addButton");
 addButton.addEventListener("click", addToDoItem);
-function addToDoItem() {
-    alert("Add button clicked!");
-}
 
 var toDoEntryBox = document.getElementById("todo-entry-box");
 var toDoList = document.getElementById("todo-list");
 
 function newToDoItem(itemText, completed) {
-    var toDoItems = document.createElement(li);
+    var toDoItems = document.createElement("li");
     var toDoText = document.createTextNode(itemText);
     toDoItems.appendChild(toDoText);
 
@@ -20,7 +17,7 @@ function newToDoItem(itemText, completed) {
 }
 
 function addToDoItem() {
-    var itemText = toDoEntryBox.Value;
+    var itemText = toDoEntryBox.value;
     newToDoItem(itemText, false);
 }
 
@@ -64,7 +61,7 @@ function saveList() {
     for (var i = 0; i < toDoList.children.length; i++) {
 
         var toDoInfo = {
-            "task": toDoEntryBox.innerText,
+            "task": toDoEntryBox.value,
             "completed": toDo.classList.contains("completed")
         };
         
